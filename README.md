@@ -246,8 +246,10 @@ For all algorithm method except KNN, we categorise the countryRegion, hasVideo, 
 #### Standardizing/Normalising the columns
 
 Standardization and Normalization of columns: Rating, PriceUSD, teamSize, coinNum, Distribution% and Duration as per below function
-Standardization                                                                         Normalisation
-<img width="206" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/19c6c741-7ddf-4826-b258-682541a088ef">                     <img width="179" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/4782f0d6-a24f-4cce-98d6-ef7a967c03a5">
+
+<img width="212" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/1e5e3786-c191-4849-b5c9-cb48b6d6880d">
+
+<img width="179" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/4782f0d6-a24f-4cce-98d6-ef7a967c03a5">
 
 
 
