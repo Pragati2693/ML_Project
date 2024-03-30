@@ -89,7 +89,7 @@ teamSize: There are 154 missing values and other values lie between 1 – 75.
 
 ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/dec830d6-6272-4be4-a919-739788abb381)
 
-Fig: 1.4: Outliers in TeamSize Column
+**Fig: 1.4: Outliers in TeamSize Column**
 
  	Not removing outliers because from the observation all the team size value greater than 50 has 100% success rate, so there might be some relation, thus leaving this column.
 
@@ -98,13 +98,13 @@ Using function: boxplot.stats(tdata$coinNum)$out, gives 395 outliers but removin
  
 ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/1e2377c5-909f-43e6-bed1-be36882a1ede)
 
-Fig: 1.5: Outliers in coinNum Column
+**Fig: 1.5: Outliers in coinNum Column**
 
 distributedPercentage: No missing values but a lot of Outlier company cannot distributes
 
  ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/9f232a67-77f2-4b46-9cbb-cf8d0a63fdeb)
 
-Fig: 1.6: Outliers in Distribution% Column
+**Fig: 1.6: Outliers in Distribution%**
 Since logically, a company cannot distribute more than 100%, thus we need to remove all the rows which has more than 100 values in the dataset and there are 10 rows which has more than 100 value.
 
 **After removing all the outliers and replacing wrong values, we are left with 2412 observations, in which 203 observations has missing values.**
@@ -165,22 +165,22 @@ Only 42% of the companies having Video succeeded and 25% of the companies not ha
 Understanding the success rate w.r.t companies having GitHub
 There are 1396 companies (58%) which has GitHub account and 1016 companies (42%) didn’t have. 43% of the companies having GitHub succeeded while 30% of the companies didn’t have GitHub account succeeded, thus the ratio of the companies having GitHub account has more success rate than those who do not have.
  
-Fig: 2.4: Total number of companies (Success and not Success) verses hasGithub
+**Fig: 2.4: Total number of companies (Success and not Success) verses hasGithub**
 
 Understanding the success rate w.r.t companies having Reddit
 There are 1553 companies (64%) which has Reddit account and 859 companies (37%) didn’t have. 44% of the companies having Reddit succeeded while 27% of the companies didn’t have Reddit account succeeded, thus the ratio of the companies having Reddit account has more success rate than those who do not have.
  
-Fig: 2.5: Total number of companies (Success and not Success) verses hasReddit
+**Fig: 2.5: Total number of companies (Success and not Success) verses hasReddit**
 
 Understanding the success rate w.r.t companies require Minimum Investment 
 There are 1100 companies (46%) which require MinimumInvestment and 1312 companies (54%) didn’t require. 40% of the companies require MinimumInvestment succeeded while 36% of the companies didn’t require MinimumInvestment succeeded, thus the ratio of the companies require MinimumInvestment has more success rate than those who do not require.
  
-Fig: 2.6: Total number of companies (Success and not Success) verses minInvestment required
+**Fig: 2.6: Total number of companies (Success and not Success) verses minInvestment required**
 
-Slogan:
+### Slogan:
 Slogan column contains a mini-mission statement of every company, and the words like “decentr”, “cryptocurrency”, “crypto” etc. are used is most of the company’s Slogan.
  
-Fig: 2.7: WordCloud on Slogan column
+**Fig: 2.7: WordCloud on Slogan column**
 
 Finding the Corelation between all the variables possible with the help of Corrplot
 To draw corrplot all the variables need to be converted to numeric value and into 0 or 1 form. Since slogan cannot be converted to 0/1 so we removed it. Also, countryRegion has more than 50 countries thus removing countryRegion column as well. Platform column has 87% of its value as Ethereum thus, to make it simple the values is converted as 1 if platform is Ethereum type and 0 if other than Ethereum. ID is also removed as it has no significance. StartDate and EndDate is also removed and Duration column is used.
@@ -188,14 +188,13 @@ The below correlation plot, Success of the company has positive correlation with
 But the below graph doesn’t give very clear picture of relation between success of the company and other variables.
 Correlation plot between the columns 
  
-Fig: 2.8: Correlation between each columns
+**Fig: 2.8: Correlation between each columns**
 
 So, lets verify the relation between variables using Spearsman’s test.
 Verifying only the success column, attached pdf of Spearrsman’s test for all variables
-	Has Video	Rating	priceUSD	teamSize	Has GitHub	Has Reddit	coinNum	Min Investment	Distri-buted%	Dura-tion	Plat-form
-Success
-(Correlation Coefficient) 	.156**	.156**	.156**	.260**	.145**	.161**	.068**	.052*	-.045*	-.064**	.023
-Sig. (2-tailed)	<.001	<.001	<.001	<.001	<.001	<.001	<.001	.011	.026	. 002	.265
+
+<img width="457" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/5b6a5df9-a398-4c76-8894-78f1ce4eb9c5">
+	
 
 **. Correlation is significant at the 0.01 level (2-tailed).
 *. Correlation is significant at the 0.05 level (2-tailed).
@@ -204,16 +203,17 @@ From the above test, all the columns except MinInvestment, Distribution% and Pla
 
 
 
-Scaling and Fitting for applying Machine learning Algorithms
+### Scaling and Fitting for applying Machine learning Algorithms
 
 There are 2 method for scaling the columns – Standardization and Normalisation but more accuracy was achieved when applied in KNN method with standardization than normalization, so dataset scaled with standardization is used for all other Algorithms.
 Standardization of column: Rating , PriceUSD, teamSize, coinNum, Distribution% and Duration as per below function
 
+<img width="276" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/834eb7e0-c686-43a9-a0fb-f878819ab452">
 
 
 
 
-Categorising CountryRegion
+#### Categorising CountryRegion
 
 For applying ML algorithm, we categorise the country on the bais of success rate, for example the country for which success rate is between 0 to 10% will be replaced with name C_0_10 and the country for which success rate is between 71 to 100% is replaced with name C_71_100, as below:
 C_0_10<- c("AFGHANISTAN","ANDORRA","ARGENTINA","ARMENIA","BARBADOS","BELARUS", "BOSNIA AND HERZEGOVINA", "CAMBODIA","CHILE", "CONGO","CURACAO","DOMINICAN REPUBLIC","ECUADOR","FRENCH,POLYNESIA","GHANA","HUNGARY","ICELAND","KAZAKHSTAN","KUWAIT","KYRGYZSTAN", "MONGOLIA","NEW CALEDONIA","PHILIPPINES","PUERTO RICO","SAINT VINCENT AND THE GRENADINES","SAUDI ARABIA","TIMOR-LESTE","TUNISIA","VANUATU","VENEZUELA")
@@ -224,7 +224,7 @@ C_41_50<-c("AUSTRIA","BRITISH VIRGIN ISLANDS","CAYMAN ISLANDS","COLOMBIA", "CYPR
 C_51_60<-c("BELIZE","BULGARIA","SOUTH AFRICA","VIETNAM")
 C_61_70<-c("BERMUDA","GEORGIA","NEW ZEALAND","LIECHTENSTEIN")
 C_71_100<-c("EGYPT","GUINEA-BISSAU","MONTENEGRO","SAMOA","SLOVAKIA", "TANZANIA", "ZIMBABWE")
-# Replacing values
+#### Replacing values
 Pdata$countryRegion[Pdata$countryRegion %in% C_0_10]<-"0_10"
 Pdata$countryRegion[Pdata$countryRegion %in% C_11_20]<-"11_20"
 Pdata$countryRegion[Pdata$countryRegion %in% C_21_30]<-"21_30"
@@ -234,63 +234,109 @@ Pdata$countryRegion[Pdata$countryRegion %in% C_51_60]<-"51_60"
 Pdata$countryRegion[Pdata$countryRegion %in% C_61_70]<-"61_70"
 Pdata$countryRegion[Pdata$countryRegion %in% C_71_100]<-"71_100"
 
-Categorising Platform
+#### Categorising Platform
 
 Categorizing platform on the basis of Ethereum or not-Ethereum
 Mdata$platform<-ifelse(Mdata$platform == "Ethereum",1,0)
 For all algorithm method except KNN, we categorise the countryRegion, hasVideo, hasGitHub, hasReddit, platform, minInvestment as factor based on its value as below:
- 
 
-Standardizing/Normalising the columns
+ ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/2f60d488-bfc4-4e1d-b49c-bdf38e5477af)
+
+
+#### Standardizing/Normalising the columns
 
 Standardization and Normalization of columns: Rating, PriceUSD, teamSize, coinNum, Distribution% and Duration as per below function
 Standardization                                                                         Normalisation
+<img width="206" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/19c6c741-7ddf-4826-b258-682541a088ef">                     <img width="179" alt="image" src="https://github.com/Pragati2693/ML_Project/assets/68961996/4782f0d6-a24f-4cce-98d6-ef7a967c03a5">
 
 
 
 
-Evaluation of Methods
+
+## Evaluation of Methods
  
-KNN Method
+### KNN Method
 
 The accuracy with Knn method was 63% when used normalization function on the columns whereas, accuracy increased to 67.5% when used Scandalization and change the value of CountryRegion as numeric value for the country with success rate 0 to 10% as 1, 20 to 30% as 2 and so on and for country with success rate between 70 to 100% as 10 as below:
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/5abb0c0a-e7c0-4eea-ba1a-79e0fda8a7b7)
+
  
 Maximum accuracy achieved at K=44
-Confusion matrix (Accuracy = 67.4 %)                     ROC Curve (AUC = 0.67)
+**Confusion matrix (Accuracy = 67.4 %)** 
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/808c9abe-5bec-4358-aa3d-8c824edf02b6)
+
+**ROC Curve (AUC = 0.67)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/4638633b-bad4-4750-9180-5a1dda81d11c)
+
                     
 
-Random Forest
+### Random Forest
 
 At ntree = 600 and mtry = 4, the accuracy was maximum, 66.3%
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/42dffcfa-55ce-439d-a17d-b455044e979d)
+
  
 
-Confusion Matrix (Accuracy = 66.2%)                    ROC Curve (AUC = 0.66)
+**Confusion Matrix (Accuracy = 66.2%)**   
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/ce33462c-eb11-4879-9608-cc45dbf75db6)
+
+**ROC Curve (AUC = 0.66)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/9f93bc88-2bb8-47f9-b4c8-0e563b329e62)
+
             
 
-Logistic Regression
+### Logistic Regression
 
-With Logistic Regression, Accuracy is 68.3%
- 
+### With Logistic Regression, Accuracy is 68.3%
 
-Confusion Matrix (Accuracy = 68.3%)                     ROC Curve (AUC = 0.69)
+ ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/a62624d4-721d-4be8-866a-dcf5c9aacdea)
+
+
+**Confusion Matrix (Accuracy = 68.3%)**    
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/c8a4aefb-023b-4290-a8ba-93856386ffff)
+
+**ROC Curve (AUC = 0.69)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/fa3b952f-ba6d-49cd-b333-6936383bb305)
+
                 
 
 
-SVM Model
+### SVM Model
 
 Applying ksvm methed and using kernel as “vanilladot” accuracy is 68.9% where as when kernel as “radial” and type as ‘C-Classification” was used accuracy was 61%
- 
-Confusion Matrix (Accuracy = 68.9%)                        ROC Curve (AUC = 0.68)
-              
 
-Decision Tree
+ ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/78077cba-b827-40ca-bd26-8655a96421d4)
+
+**Confusion Matrix (Accuracy = 68.9%)**                        
+              
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/1346b9bc-26a3-4706-93db-a5d9db767b41)
+
+**ROC Curve (AUC = 0.68)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/b572dfe8-8dd3-4893-8a9c-4d614ac8f0f4)
+
+
+### Decision Tree
 
 Using C5.0 method, accuracy is 65.2% 
 
-Confusion Matrix (Accuracy = 65.2%)                   ROC Curve (AUC = 0.663)
-            
+**Confusion Matrix (Accuracy = 65.2%)**   
 
-XGboost
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/e0091dbe-1aa8-483f-97fb-7b68f18d21e0)
+
+**ROC Curve (AUC = 0.663)**
+            
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/7cddc5e0-5a90-45ac-8cb2-c640c765906e)
+
+### XGboost
 
 Using XGBoost algorithm and giving prediction to be positive for value greater than 0.5, accuracy is 65.4%.
  
