@@ -328,35 +328,58 @@ Applying ksvm methed and using kernel as “vanilladot” accuracy is 68.9% wher
 
 Using C5.0 method, accuracy is 65.2% 
 
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/e915ea52-51f7-4dfa-b81f-bfeff23724e0)
+
 **Confusion Matrix (Accuracy = 65.2%)**   
 
-![image](https://github.com/Pragati2693/ML_Project/assets/68961996/e0091dbe-1aa8-483f-97fb-7b68f18d21e0)
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/d80861ae-06b0-469d-8a29-1ff32b41755d)
+
 
 **ROC Curve (AUC = 0.663)**
             
-![image](https://github.com/Pragati2693/ML_Project/assets/68961996/7cddc5e0-5a90-45ac-8cb2-c640c765906e)
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/bbd8c62b-6a55-4fe4-af25-2c5a26068724)
+
 
 ### XGboost
 
 Using XGBoost algorithm and giving prediction to be positive for value greater than 0.5, accuracy is 65.4%.
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/19f2f595-5f3a-4a28-be69-9d4d95a8c3c6)
+
  
 
-Confusion Matrix (Accuracy = 65.4%)                ROC Curve ( AUC = 0.67)
+**Confusion Matrix (Accuracy = 65.4%)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/1802daac-3fdb-495e-b77d-9ee2b9101a99)
+
+
+**ROC Curve ( AUC = 0.67)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/0a3f9fcf-de79-4727-83b9-066ebc341eb2)
+
          
 
-NaïveBayes
+### NaïveBayes
 
 The accuracy with NaiveBayes model is lowest, 50.1% and has very high difference between Sensitivity and Specificity.
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/bb85b46f-aaa5-4205-b98e-29c27b496b8a)
+
  
 
-Confusion Matrix (Accuracy = 50.1%)
+**Confusion Matrix (Accuracy = 50.1%)**
+
+![image](https://github.com/Pragati2693/ML_Project/assets/68961996/718dee8a-3664-41ef-8098-13c3020ffa3e)
+
  
 
-Analysis of the Result & Conclusion
+## Analysis of the Result & Conclusion
 
-kSVM method gives the highest accuracy of approx. 69% but the difference between Sensitivity and Specificity is lowest, approx. .2 with Decision tree method. 
-Success Rate of all the methods
- 
+*kSVM method gives the highest accuracy of approx. 69% but the difference between Sensitivity and Specificity is lowest, approx. .2 with Decision tree method.* 
+**Success Rate of all the methods**
+
+ ![image](https://github.com/Pragati2693/ML_Project/assets/68961996/45db8e5c-8348-4f7a-b990-1dbbf18bcc9e)
+
 
 We now know that kSVM method can predict the success of the company on the basis of other attributes values with highest accuracy. Also, it can be seen that the proportion of the true success out of all the success company (Sensitivity) is high (between 70 to 80%) for all the algorithm except Naive Bayes model and the proportion of the company identified as unsuccessful correctly out of all unsuccessful company (Specificity) is very low for all model except Naive Bayes model.
 Thus, overall kSVM model will give better accuracy but for only predicting the companies which could be unsuccessful in raising the funds Naïve Bayes model is better and for only predicting the companies which could be successful in raising the funds Decision tree model is better.
